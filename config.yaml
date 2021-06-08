@@ -1,0 +1,76 @@
+baseurl: /
+languageCode: en-US
+title: Connectome
+paginate: 12
+theme: connectome
+enableRobotsTXT: true
+googleAnalytics: ''
+SectionPagesMenu: main
+menu:
+  main:
+    - name: About
+      weight: 1
+      identifier: about
+      url: /about/
+  topright:
+    - name: Posts
+      weight: 1
+      identifier: posts
+      url: /posts/
+    - name: null
+      weight: 2
+      identifier: tags
+      url: /tags/
+      pre: <i class="fas fa-tags"></i>
+    - name: null
+      weight: 3
+      identifier: graph
+      url: /graph
+      pre: <i class="fas fa-project-diagram"></i>
+taxonomies:
+  tag: tags
+  link: links
+params:
+  theme_variant: lumen
+  description: Connectume is a hugo theme for online communities such as reading clubs.
+  favicon: /logos/logo-square.png
+  logo: /logos/logo-square.png
+  projects:
+    section: projects
+    indicator: Notebooks
+  splash: /img/splash/undraw_to_the_moon_v1mv.svg
+  powered_by: love
+  hide_author: false
+  images: null
+  github: kausalflow
+  twitter: ''
+  author: KausalFlow
+  editURL: >-
+    https://github.com/kausalflow/hugo-connectome-theme-demo/edit/master/content/
+  utterances:
+    repo: kausalflow/hugo-connectome-theme-demo
+    term: pathname
+    theme: github-light
+  lyket:
+    api_key: 4df20b7e32f469fed5dc53f5ab39d8
+    lyket_type: updown
+outputFormats:
+  data:
+    baseName: data
+    isPlainText: true
+    mediaType: application/json
+    notAlternative: true
+  network:
+    baseName: network
+    isPlainText: true
+    mediaType: application/json
+    notAlternative: true
+outputs:
+  home:
+    - HTML
+    - RSS
+    - data
+    - network
+themesDir: themes
+baseURL: ''
+publishDir: public

@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-content">
+        <div class="media">
+            <div class="media-content">
+                <a href="{{ .Permalink }}">
+                    <p class="title is-4">{{.Title}}</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <p>
+                <div class="tags is-small">
+                    {{ range $tag := .Params.tags }}
+                    <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}"><span class="tag is-warning is-small is-light">#{{$tag}}</span></a>
+                    {{ end }}
+                </div>
+            </p>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,45 @@
+{{ define "header" }}
+  {{ partial "menu" . }}
+  <div class="hero" style="margin-bottom:2em;">
+    <div class="hero-body">
+        <div class="container">
+            <div class="container has-text-centered">
+                <a href="{{ .Parent.Permalink }}"><i class="fas fa-tags" style="margin-right: 0.5em;"></i></a>
+                <h1 class="title is-2 has-text-centered">{{ .Title }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ define "main" }}
+<div class="is-divider" data-content="ARTICLES"
+                            style="border-top:.1rem dashed #dbdbdb57 !important;margin: 1rem 0 !important;">
+                        </div>
+  <main class="container" aria-label="Content">
+
+    <div class="columns is-multiline">
+
+
+        {{ range .Paginator.Pages }}
+        <div class="column is-one-third">
+            {{ partial "list/card-wiki" . }}
+        </div>
+        {{ end }}
+
+    </div>
+    <div class="is-divider" style="border-top:.1rem dashed #dbdbdb57 !important;margin: 1rem 0 !important;"></div>
+
+    <div class="container">
+        <div class="columns">
+            <div class="column" style="margin-bottom: 2em;padding-bottom:1em;">
+                {{ if gt .Paginator.TotalPages 1 }}
+                    {{ partial "pagination" . }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</main>
+{{ end }}
+{{ define "footer" }}
+  {{ partial "footer" . }}
+{{ end }}
